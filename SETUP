@@ -1,0 +1,23 @@
+For running the encoder-only demo:
+
+sudo raspi-config
+    enable I2C driver and reboot
+
+
+For running the full demo with the VFD:
+
+sudo raspi-config
+    enable SPI driver and reboot
+
+sudo emacs /etc/modprobe.d/raspi-blacklist.conf
+    remove bcm2708-spi if it is listed
+sudo apt-get update
+sudo apt-get -y install python-dev
+mkdir python-spi
+cd python-spi
+wget https://raw.github.com/doceme/py-spidev/master/setup.py
+wget https://raw.github.com/doceme/py-spidev/master/spidev_module.c
+wget https://raw.github.com/doceme/py-spidev/master/README.md
+wget https://raw.github.com/doceme/py-spidev/master/CHANGELOG.md
+sudo python ./setup.py install
+y
