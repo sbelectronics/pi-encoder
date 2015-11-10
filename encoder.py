@@ -21,10 +21,11 @@ import RPi.GPIO as IO
 #   14 - encoder pin 1 (red) via 270 ohm resistor
 #   15 - encoder pin 2 (green) via 150 ohm resistor
 #   18 - encoder pin 4 (blue) via 150 ohm resistor
+#
+# Power
+#    GND - encoder C
+#    3.3V - encoder pin 5 (led/switch common)
 
-Power
-   GND - encoder C
-   3.3V - encoder pin 5 (led/switch common)
 ENCODER_PIN_A = 17
 ENCODER_PIN_B = 27
 ENCODER_PIN_SW = 22
@@ -189,10 +190,6 @@ def switch_demo():
             print "down!"
 
 def rgb_demo():
-    A_PIN  = 0
-    B_PIN  = 2
-    SW_PIN = 3
-
     value = 0
     toggle = False
 
